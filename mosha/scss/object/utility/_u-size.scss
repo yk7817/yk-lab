@@ -1,0 +1,9 @@
+@use "../../global/setting" as g;
+@use "../../global/mixin" as *;
+
+.u-size--headerLogoHeight {
+    height: 33px;
+    @include breakpoint(laptop-s) {
+        height: 30px;
+    }
+}

@@ -1,0 +1,223 @@
+@use "../../global/setting" as g;
+@use "../../global/mixin" as *;
+
+.p-header {
+    position: relative;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 20px 175px 210px 1fr 20px;
+    align-items: center;
+    @include breakpoint(laptop-s) {
+        height: 50px;
+    }
+    &__logo {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    &__catchCopy {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        color: g.$font-catchCopyColor;
+        font-size: 1.4rem;
+        font-weight: bold;
+        @include breakpoint(laptop-l) {
+            display: none;
+        }
+        p > span{
+            font-size: 1.8rem;
+        }
+    }
+    &__menuIcon {
+        position: relative;
+        display: none;
+        width: 50px;
+        height: 50px;
+        margin: 0 0 0 auto;
+        transition: 0.2s;
+        cursor: pointer;
+        @include breakpoint(laptop-s) {
+            display: flex;
+            justify-content: center;
+        }
+        &.is-active {
+            background-color: g.$backGround-navLastLinkColor;
+            span {
+                &::before {
+                    transform: rotate(-135deg);
+                    top: 0;
+                    background-color: g.$backGround-whiteColor;
+                }
+                &::after {
+                    transform: rotate(-45deg);
+                    top: 0;
+                    background-color: g.$backGround-whiteColor;
+                }
+            }
+        }
+        span {
+            position: absolute;
+            top: 50%;
+            width: 23px;
+            height: 2px;
+            transition: 0.2s;
+            background-color: g.$backGround-navLastLinkColor;
+            &::before {
+                position: absolute;
+                content: "";
+                top: -10px;
+                width: 23px;
+                height: 2px;
+                transition: 0.2s;
+                background-color: g.$backGround-navLastLinkColor;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                top: 10px;
+                width: 23px;
+                height: 2px;
+                transition: 0.2s;
+                background-color: g.$backGround-navLastLinkColor;
+            }
+        }
+    }
+    &__nav {
+        height: 100%;
+        grid-column-start: 4;
+        grid-column-end: 6;
+        font-size: 1.6rem;
+        nav {
+            height: 100%;
+            @include breakpoint(laptop-s) {
+                display: none;
+                position: absolute;
+                overflow: hidden;
+                left: 0;
+                width: 100%;
+                height: 0;
+                background-color: g.$backGround-whiteColor;
+                z-index: 1000;
+            }
+            &.is-active {
+                display: block;
+            }
+        }
+        nav > ul {
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            @include breakpoint(laptop-s) {
+                display: block;
+                height: fit-content;
+            }
+        }
+        nav > ul > li {
+            position: relative;
+            height: 100%;
+            &:nth-child(3) > a {
+                &::before {
+                    display: none;
+                }
+                &::after {
+                    display: none;
+                }
+            }
+            .p-submenu {
+                display: none;
+                height: 0;
+                overflow: hidden;
+                position: absolute;
+                left: 0;
+                background-color: g.$backGround-lightBlueColor;
+                transition: 1s;
+                z-index: 11;
+                @include breakpoint(laptop-s) {
+                    height: 100%;
+                    position: static;
+                    background-color: g.$backGround-whiteColor;
+                }
+                li > a {
+                    display: flex;
+                    height: auto;
+                    padding: 15px 60px 15px 15px;
+                    white-space: nowrap;
+                    color: g.$font-catchCopyColor;
+                    transition: 0.3s;
+                    @include hover {
+                        background-color: g.$backGround-whiteColor;
+                        color: g.$font-subMenuHoverColor;
+                    @include breakpoint(laptop-s) {
+                        @include hover {
+                            background-color: g.$bakGround-responsiveHoverColor;
+                            color: g.$font-catchCopyColor;
+                            & > a::after {
+                                display: none;
+                            }
+                        }
+                    }
+                    }
+                }
+            }
+            .p-submenu.is-active {
+                display: block;
+                height: auto;
+                transition: 1s;
+            }
+            @include hover {
+                & > a::after {
+                    display: none;
+                }
+            }
+        }
+        nav > ul > li > a{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            color: g.$font-baseColor;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: 0.3s;
+            @include hover {
+                background-color: g.$backGround-lightBlueColor;
+            }
+            @include breakpoint(laptop-m) {
+                padding: 0 10px;
+            }
+            @include breakpoint(laptop-s) {
+                padding: 10px;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 50%;
+                    right: 10px;
+                    width: 24px;
+                    height: 2px;
+                    background-color: g.$font-baseColor;
+                }
+                &::after {
+                    position: absolute;
+                    content: '';
+                    top: 25%;
+                    right: 21px;
+                    width: 2px;
+                    height: 24px;
+                    background-color: g.$font-baseColor;
+                }
+                @include hover {
+                    background-color: g.$bakGround-responsiveHoverColor;
+                }
+            }
+        }
+        nav > ul > li:last-child > a {
+            background-color: g.$backGround-navLastLinkColor;
+            color: g.$font-whiteColor;
+            @include breakpoint(laptop-s) {
+                display: none;
+            }
+        }
+    }
+}

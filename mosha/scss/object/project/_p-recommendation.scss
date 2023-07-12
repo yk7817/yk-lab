@@ -1,0 +1,72 @@
+@use "../../global/setting" as g;
+@use "../../global/mixin" as *;
+
+.p-recommendation {
+    padding: 4rem 0;
+    background-color: g.$backGround-blackColor;
+    text-align: center;
+    @include breakpoint(sp) {
+        padding: 6rem 0;
+    }
+    &__contents {
+        display: flex;
+        justify-content: center;
+        margin: -23rem 0 0 0;
+        z-index: 2;
+        @include breakpoint(sp) {
+            display: block;
+            margin: 0;
+        }
+    }
+    &__entry {
+        width: 229px;
+        margin: 0 5rem;
+        @include breakpoint(tablet) {
+            width: 29.3%;
+            margin: 0 2%;
+        }
+        @include breakpoint(sp) {
+            width: 100%;
+            margin: 0 0 4rem 0;
+        }
+    }
+    &__inner {
+        max-width: 1078px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        @include breakpoint(tablet) {
+            margin: 0 10px;
+        }
+    }
+    &__title > p:first-child {
+        width: 230px;
+        height: 230px;
+        background-color: g.$backGround-whiteColor;
+        border: solid 6px #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+        @include breakpoint(tablet) {
+            margin: 0 auto;
+        }
+    }
+    &__title > p:nth-child(2) {
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: g.$font-whiteColor;
+        margin: 0.2rem 0 0 0;
+    }
+    &__description {
+        text-align: left;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: g.$font-whiteColor;
+        margin: 0.5rem 0 0 0;
+        @include breakpoint(sp) {
+            text-align: left;
+        }
+    }
+}
