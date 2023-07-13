@@ -380,6 +380,7 @@ img {
   color: #ffffff;
   border-radius: 4px;
   background-color: #2498B3;
+  transition: 0.5s;
 }
 @media (max-width: 768px) {
   .p-main__button a {
@@ -468,7 +469,7 @@ img {
 }
 @media (max-width: 768px) {
   .p-recommendation__description {
-    text-align: center;
+    text-align: left;
   }
 }
 

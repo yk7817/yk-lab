@@ -97,6 +97,7 @@
             color: g.$font-whiteColor;
             border-radius: 4px;
             background-color: g.$backGround-navLastLinkColor;
+            transition: 0.5s;
             @include breakpoint(sp) {
                 font-size: 1.6rem;
                 padding: 12px 18px;
