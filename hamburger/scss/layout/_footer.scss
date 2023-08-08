@@ -1,0 +1,43 @@
+@use "../foundation" as * ;
+
+.l-footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-image: url(./../images/pc/pc_footer.jpg);
+    height: 150px;
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        height: 100%;
+    }
+    &__menu {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            top: 3px;
+            left: 54%;
+            background-color: $white;
+            width: 2px;
+            height: 80%;
+        }
+        ul {
+            display: flex;
+            gap: 30px;
+            li {
+                a {
+                    font-family: $m-plus-font;
+                    font-weight: normal;
+                    font-size: 20px;
+                    color: $white;
+                }
+            }
+        }
+    }
+    &__copyright {
+        text-align: center;
+    }
+}

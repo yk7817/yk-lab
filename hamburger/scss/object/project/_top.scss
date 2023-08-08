@@ -1,0 +1,137 @@
+@use "../../foundation" as * ;
+
+.p-top-mv {
+    display: flex;
+    align-items: center;
+    background: url(./../images/pc/pc_top_mv.jpg) no-repeat center center;
+    background-size: cover;
+    height: 57.5vh;
+    padding: 0 0 0 85px;
+    @include breakpoint(tablet) {
+        height: 24.5vh;
+    }
+    @include breakpoint(sp) {
+        padding: 0 0 0 25px;
+    }
+}
+.p-top-order {
+    margin: 120px 0 0 0;
+    @include breakpoint(tablet) {
+        margin: 40px 0 0 0;
+    }
+    &__inner {
+        width: 70vw;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        @include breakpoint(laptop) {
+            width: 90vw;
+            gap: 50px;
+            @include breakpoint(sp) {
+                flex-direction: column;
+            }
+        }
+    }
+    &__card {
+        background-size: cover;
+        // @include breakpoint(laptop) {
+        //     height: calc(100vw/1.40);
+        // }
+        // @include breakpoint(tablet) {
+        //     height: 60vh;
+        // }
+    }
+    &__card--link {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 85vh;
+        padding: 20px;
+        @include breakpoint(tablet) {
+            min-height: 58vh;
+        }
+    }
+    &__heading--title {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: -43px;
+            width: 63px;
+            height: 4px;
+            background-color: $white;
+            @include breakpoint(tablet) {
+                width: 36px;
+            }
+        }
+    }
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__item {
+        background-color: $white-transparency;
+        padding: 14px 20px;
+    }
+}
+.p-top-map {
+    position: relative;
+    background-size: cover;
+    margin: 130px 0 0 0;
+    &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-color: rgba(0,0,0, 0.2);
+    }
+    @include breakpoint(tablet) {
+        margin: 40px 0 0 0;
+    }
+    &__inner {
+        width: 50vw;
+        padding: 5.2% 8.8% 4.9% 7.9%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.3);
+        @include breakpoint(tablet) {
+            width: 100%;
+        }
+        @include breakpoint(sp) {
+            padding: 12% 12% 17% 12%;
+        }
+    }
+    &__heading {
+        position: relative;
+        z-index: 1;
+            &::before {
+            position: absolute;
+            content: "";
+            bottom: -3vw;
+            left: 0;
+            width: 75px;
+            height: 2px;
+            background-color: $white;
+            @include breakpoint(sp) {
+                bottom: -2vw;
+            }
+        }
+    }
+    &__description {
+        margin: 15% 0 0 0;
+        line-height: 33px;
+        z-index: 1;
+        @include breakpoint(tablet) {
+            margin: 5% 0 0 0;
+        }
+    }
+}

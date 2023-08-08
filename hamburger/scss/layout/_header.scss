@@ -1,0 +1,50 @@
+@use "./../foundation" as * ;
+
+.l-header {
+    height: 217px;
+    @include breakpoint(tablet) {
+        padding: 20px 25px 40px;
+    }
+    &__inner {
+        display: grid;
+        grid-template-columns: 65px 1fr 1fr 31px;
+        height: 100%;
+        @include breakpoint(tablet) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+    }
+    &__menu--button {
+        display: none;
+        align-self: center;
+        justify-self: flex-end;
+        @include breakpoint(tablet) {
+            display: block;
+        }
+    }
+    &__logo {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        max-width: 365px;
+        justify-self: flex-start;
+        align-self: center;
+        @include breakpoint(tablet) {
+            grid-column-start: 1;
+            align-self: center;
+            justify-self: center;
+            max-width: 200px;
+        }
+    }
+    &__search-form {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        justify-self: flex-end;
+        align-self: center;
+        @include breakpoint(tablet) {
+            grid-column-start: 1;
+            align-self: center;
+            justify-self: center;
+            margin: 20px 0 0 0;
+        }
+    }
+}

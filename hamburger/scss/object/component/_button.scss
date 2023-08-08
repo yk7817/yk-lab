@@ -1,0 +1,10 @@
+@use "../../foundation" as * ;
+
+.c-button {
+    font-family: $m-plus-font;
+    font-weight: bold;
+    font-size: 16px;
+    color: $gray-dark;
+    background-color: $beige-dark;
+    border: 1px solid $gray-dark;
+}

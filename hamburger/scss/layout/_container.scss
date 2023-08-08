@@ -1,0 +1,10 @@
+@use "../foundation" as * ;
+
+.l-container {
+    display: grid;
+    grid-template-columns: 80vw 20vw;
+    grid-template-rows: 217px 1fr 150px;
+    @include breakpoint(laptop) {
+        display: block;
+    }
+}

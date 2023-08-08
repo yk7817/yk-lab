@@ -1,0 +1,43 @@
+@use "../../foundation" as * ;
+
+.c-description {
+    &-first {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 16px;
+        color: $white;
+        @include breakpoint(tablet) {
+            font-size: 14px;
+        }
+        @include breakpoint(sp) {
+            font-size: calc(0.8125rem + ((1vw - 3.5px) * 0.7177));
+        }
+    }
+    &-second {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 16px;
+        color: $brown-darkest;
+        @include breakpoint(tablet) {
+            font-size: 14px;
+        }
+    }
+    &-third {
+        font-family: $m-plus-font;
+        font-weight: normal;
+        font-size: 16px;
+        color: $brown-darkest;
+    }
+    &-forth {
+        font-family: $roboto-font;
+        font-weight: bold;
+        font-size: 16px;
+        color: $gray-dark;
+    }
+    &-fifth {
+        font-family: $m-plus-font;
+        font-weight: normal;
+        font-size: 16px;
+        color: $gray-dark;
+    }
+}

@@ -1,0 +1,67 @@
+@use "../../foundation" as * ;
+
+.p-pagenation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px 0 60px;
+    @include breakpoint(tablet) {
+        margin: 105px 0 30px;
+    }
+    @include breakpoint(sp) {
+        margin: 72px 0 30px;
+    }
+    .navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__current--number {
+        margin: 0 20px 0 0;
+        @include breakpoint(sp) {
+            display: none;
+        }
+    }
+    &__content {
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .page-numbers {
+            padding: 5px 10px;
+            color: $gray-dark;
+            border: 1px solid $gray-dark;
+        }
+        .page-numbers.current {
+            color: $white;
+            background-color: $brown-dark;
+        }
+        .prev,.next {
+            border: none;
+        }
+        @include breakpoint(sp) {
+            display: none;
+        }
+    }
+    &__sp {
+        width: 100%;
+        display: none;
+        .pagination {
+            .nav-links {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+            .page-numbers {
+                display: none;
+            }
+            .prev, .next {
+                display: block;
+            }
+        }
+        @include breakpoint(sp) {
+            display: block;
+        }
+    }
+}

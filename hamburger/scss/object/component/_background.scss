@@ -1,0 +1,13 @@
+@use "../../foundation" as * ;
+
+.c-background {
+    &-takeout {
+        background: url(./../images/pc/takeout_category.jpg) no-repeat center center;
+    }
+    &-eatin {
+        background: url(./../images/pc/eatin_category.jpg) no-repeat center center;
+    }
+    &-map {
+        background: url(./../images/pc/access_map.jpg) no-repeat center center;
+    }
+}

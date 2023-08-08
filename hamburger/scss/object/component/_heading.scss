@@ -1,0 +1,85 @@
+@use "../../foundation" as * ;
+
+.c-heading {
+    &-first {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 36px;
+        color: $white;
+        @include breakpoint(tablet) {
+            font-size: 30px;
+        }
+        @include breakpoint(sp) {
+            font-size: calc(1.5625rem + ((1vw - 3.5px) * 1.1962));
+        }
+    }
+    &-second {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 40px;
+        color: $white;
+    }
+    &-third{
+        font-family: $roboto-font;
+        font-weight: bold;
+        font-size: 60px;
+        color: $white;
+    }
+    &-fourth {
+        font-family: $roboto-font;
+        font-weight: bold;
+        font-size: 80px;
+        color: $white;
+        @include breakpoint(tablet) {
+            font-size: 44px;
+        }
+        @include breakpoint(sp) {
+            font-size: 41px;
+        }
+    }
+    &-fifth {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 24px;
+        color: $brown-darkest;
+    }
+    &-sixth {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 36px;
+        color: $brown-darkest;
+        @include breakpoint(sp) {
+            font-size: 28px;
+        }
+    }
+    &-seventh {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 28px;
+        color: $brown-darkest;
+    }
+    &-eighth {
+        font-family: $roboto-font;
+        font-weight: bold;
+        font-size: 34px;
+        color: $gray-dark;
+        @include breakpoint(sp) {
+            font-size: 20px;
+        }
+    }
+    &-ninth {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 24px;
+        color: $gray-dark;
+    }
+    &-tenth {
+        font-family: $m-plus-font;
+        font-weight: bold;
+        font-size: 60px;
+        color: $white;
+        @include breakpoint(sp) {
+            font-size: 36px;
+        }
+    }
+}

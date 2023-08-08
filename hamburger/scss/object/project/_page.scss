@@ -1,0 +1,18 @@
+@use "../../foundation" as * ;
+
+.p-page {
+    position: relative;
+    .attachment-post-thumbnail {
+        height: 500px;
+        object-fit: cover;
+    }
+    &__heading {
+        position: absolute;
+        top: 200px;
+        left: 85px;
+    }
+    &__contents {
+        padding: 62px 100px 275px;
+    }
+    
+}

@@ -1,0 +1,90 @@
+@use "../../foundation" as * ;
+
+.p-search {
+    &__mv {
+        position: relative;
+        background: url(./../images/pc/archive_mv_img.jpg) no-repeat center center;
+        background-size: cover;
+        height: 240px;
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 85px;
+        ::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+    }
+    &__heading {
+        z-index: 0;
+    }
+    &__description {
+        width: 70vw;
+        margin: 60px auto 0;
+        &__excerpt {
+            margin: 10px 0 0 0;
+        }
+    }
+    &__items {
+        width: 70vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .wp-block-heading {
+            font-family: $m-plus-font;
+            font-weight: bold;
+            font-size: 24px;
+            color: $white;
+        }
+        &--thumbnail {
+            flex-basis: 50%;
+            .attachment-post-thumbnail {
+                width: 100%;
+                height: 24vw;
+            }
+        }
+        &--excerpt {
+            flex-basis: 50%;
+            background-color: $brown-dark;
+            height: 24vw;
+            padding: 4%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-family: $m-plus-font;
+            font-weight: bold;
+            font-size: 36px;
+            color: $white;
+            .more-link {
+                width: 290px;
+                padding: 20px 0;
+                font-family: $m-plus-font;
+                font-weight: bold;
+                font-size: 16px;
+                color: $gray-dark;
+                background-color: $white;
+                border-radius: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-self: center;
+            }
+        }
+    }
+    .wp-block-post-excerpt {
+        font-size: 16px;
+        font-weight: normal;
+        margin: 10px 0 0 0;
+    }
+}

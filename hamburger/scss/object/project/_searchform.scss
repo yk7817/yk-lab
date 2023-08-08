@@ -1,0 +1,36 @@
+@use "../../foundation" as * ;
+
+.p-search-form{
+    position: relative;
+    white-space: nowrap;
+    &::after {
+        position: absolute;
+        font-family: FontAwesome;
+        content: "\f002";
+        font-size: 24px;
+        top: 25%;
+        left: 10px;
+    }
+    &__keyword {
+        position: relative;
+        background-color: $white;
+        border: 1px solid $gray-dark;
+        border-radius: 10px;
+        width: 356px;
+        height: 46px;
+        padding: 0 10px 0 40px;
+        @include breakpoint(sp) {
+            max-width: 50vw;
+            width: auto;
+        }
+    }
+    &__submit {
+        background-color: $beige-dark;
+        border: 1px solid $gray-dark;
+        border-radius: 10px;
+        padding: 10px 51px;
+        @include breakpoint(sp) {
+            padding:  10px 30px;
+        }
+    }
+}
