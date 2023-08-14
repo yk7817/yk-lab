@@ -6,7 +6,7 @@
         <div class="p-archive">
             <div class="p-archive__mv">
                 <h2 class="p-archive__heading c-heading-tenth">
-                    Menu
+                    Menu:<span class="p-archive__category--name c-description-first"><?php echo single_cat_title() ?></span>
                 </h2>
             </div>
             <div class="p-archive__description">

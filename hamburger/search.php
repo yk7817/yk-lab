@@ -6,7 +6,10 @@
         <div class="p-search">
             <div class="p-search__mv">
                 <h2 class="p-search__heading c-heading-tenth">
-                    Search
+                    Search:
+                    <span class="p-search__value c-description-first">
+                        <?php echo get_search_query(); ?>
+                    </span>
                 </h2>
             </div>
             <div class="p-search__description">
@@ -17,15 +20,9 @@
                 テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                 </p>
             </div>
-            <section class="p-search__items u-mt70">
-                <?php
-                if ( have_posts() && get_search_query() ):
-                    while ( have_posts() ):
-                        the_post();
-                        get_template_part( 'template-parts/post/content', 'excerpt' );
-                    endwhile;
-                ?>
-                <?php query_posts($query_string, '&posts_per_page=10'); ?>
+            <section class="p-search__items">
+                <?php if(have_posts()): ?>
+                <?php while(have_posts()): the_post(); ?>
                 <!-- search item -->
                 <article class="p-search__item">
                     <div class="p-search__item--thumbnail">
@@ -36,6 +33,7 @@
                         <?php the_content('詳しく見る'); ?>
                     </div>
                 </article>
+                <?php endwhile; ?>
                 <?php else : ?>
                     <p>検索キーワードに該当する記事がありませんでした</p>
                 <?php endif; ?>
@@ -64,6 +62,18 @@
                         the_posts_pagination($args);
                         ?>
                     </div>
+                        <!-- sp pagenation -->
+                        <div class="p-pagenation__sp">
+                        <?php
+                        $args = array(
+                            'prev_text' => '<span class="c-description-fifth"><< 前へ</span>',
+                            'next_text' => '<span class="c-description-fifth">次へ >></span>',
+                            'screen_reader_text' => 'p-pagenation__sp--number',
+                        );
+                        the_posts_pagination($args);
+                        ?>
+                    </div>
+                    <!-- / sp pagenation -->
                 </div>
                 <!-- / pagenation -->
             </section>

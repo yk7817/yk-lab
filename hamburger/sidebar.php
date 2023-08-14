@@ -4,6 +4,11 @@
             Menu
         </h2>
     </div>
+    <!-- responsive menu close icon -->
+    <div class="l-sidebar__close" id="js-menuClose-icon">
+        <span class="l-sidebar__close--icon"></span>
+    </div>
+    <!-- / responsive menu close icon -->
     <?php
         wp_nav_menu(
             array(

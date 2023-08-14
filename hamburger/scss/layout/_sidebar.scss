@@ -1,11 +1,18 @@
 @use "../foundation" as * ;
 
 .l-sidebar {
+    position: relative;
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 3;
     background-color: $beige-dark;
     padding: 84px 0 0 34px;
+    transition: right 0.5s;
+    &__heading {
+        @include breakpoint(tablet) {
+            display: none;
+        } 
+    }
     &__inner {
         margin: 90px 0 0 0;
     }
@@ -29,9 +36,46 @@
             }
         } 
     }
-    @include breakpoint(laptop) {
+    @include breakpoint(tablet) {
         position: fixed;
         top: 0;
         right: -271px;
+        z-index: 10;
+        height: 100vh;
     }
+    &__close {
+        position: absolute;
+        display: none;
+        top: 20px;
+        right: 25px;
+        width: 32px;
+        height: 37px;
+        cursor: pointer;
+        &::before {
+            position: absolute;
+            content: "";
+            top: 15px;
+            left: -5px;
+            width: 45px;
+            height: 6px;
+            transform: rotate(45deg);
+            background-color: $gray-dark;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            top: 15px;
+            left: -5px;
+            width: 45px;
+            height: 6px;
+            transform: rotate(135deg);
+            background-color: $gray-dark;
+        }
+        @include breakpoint(tablet){
+            display: block;
+        }
+    }
+}
+.l-sidebar.is-active {
+    right: 0;
 }

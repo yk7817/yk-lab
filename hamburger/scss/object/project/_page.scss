@@ -5,14 +5,66 @@
     .attachment-post-thumbnail {
         height: 500px;
         object-fit: cover;
+        @include breakpoint(sp) {
+            height: 225px;
+        }
     }
     &__heading {
         position: absolute;
         top: 200px;
-        left: 85px;
+        left: 86px;
+        @include breakpoint(sp) {
+            top: 86px;
+            left: 25px;
+        }
     }
     &__contents {
         padding: 62px 100px 275px;
+        @include breakpoint(sp) {
+            padding: 34px 20px 70px;
+        }
+        .wp-block-quote {
+            @include breakpoint(sp) {
+                padding: 30px 15px;
+            }
+        }
     }
-    
+    .wp-block-media-text {
+        figure {
+            align-self: flex-start;
+        }
+        &__content {
+            align-self: start;
+            p {
+                margin: 0;
+            }
+        }
+    }
+    .wp-block-gallery.has-nested-images {
+        figure.wp-block-image {
+            flex-grow: 0;
+            @include breakpoint(tablet) {
+                flex-basis: 49%;
+            }
+            @include breakpoint(sp) {
+                flex-basis: 100%;
+            }
+        }
+    }
+    .wp-block-code {
+        @include breakpoint(sp) {
+            margin: 30px 0;
+        }
+    }
+    .wp-block-button {
+        .wp-element-button {
+            @include breakpoint(sp) {
+                padding: 30px 0;
+                width: 100%;
+            }
+        }
+        @include breakpoint(sp) {
+            width: 100%;
+        }
+    }
 }

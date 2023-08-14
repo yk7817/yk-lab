@@ -25,8 +25,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 80px;
-        @include breakpoint(laptop) {
+        gap: 4vw;
+        @include breakpoint(tablet) {
             width: 90vw;
             gap: 50px;
             @include breakpoint(sp) {

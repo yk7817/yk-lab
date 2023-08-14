@@ -8,9 +8,12 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
     <div class="l-container">
+        <!-- overlay -->
+        <div class="c-overlay" id="js-overlay"></div>
+        <!-- / overlay -->
         <header class="l-header">
             <div class="l-header__inner">
-                <div class="l-header__menu--button c-heading-eighth">
+                <div class="l-header__menu--button c-heading-eighth" id="js-menu">
                     Menu
                 </div>
                 <div class="l-header__logo">

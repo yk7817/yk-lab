@@ -1,8 +1,12 @@
+@use "_mixin" as * ;
 @use "_variable" as * ;
 @use "_font" as * ;
 
 body {
     background-color: $beige-light ;
+}
+body.is-noScroll {
+    overflow: hidden;
 }
 
 a {
@@ -23,22 +27,31 @@ img {
     font-family: $m-plus-font;
     color: $brown-darkest;
     h2 {
-        font-size: 1.5em;
+        font-size: 36px;
         margin: .75em 0;
+        @include breakpoint(sp) {
+            font-size: 28px;
+        }
     }
     h3 {
-        font-size: 1.17em;
+        font-size: 28px;
         margin: .83em 0;
+        @include breakpoint(sp) {
+            font-size: 24px;
+        }
+    }
+    h4 {
+        font-size: 20px;
     }
     h4,ul,ol,blockquote,p {
         margin: 1.12em 0
     }
     h5 {
-        font-size: .83em;
+        font-size: 20px;
         margin: 1.5em 0
     }
     h6 {
-        font-size: .75em;
+        font-size: 20px;
         margin: 1.67em 0
     }
     ol {

@@ -17,7 +17,7 @@
             <div class="p-top-order__inner">
                 <!-- take out -->
                 <div class="p-top-order__card c-background-takeout">
-                    <a href="あとでテイクアウトのカテゴリリンク" class="p-top-order__card--link">
+                    <a href="http://hamburger.local/category/take-out/" class="p-top-order__card--link">
                         <div class="p-top-order__heading">
                             <h2 class="p-top-order__heading--title c-heading-fourth">
                                 Take Out
@@ -50,7 +50,7 @@
                 <!-- / take out -->
                 <!-- eat in -->
                 <div class="p-top-order__card c-background-eatin">
-                    <a href="あとでイートインカテゴリのリンク先" class="p-top-order__card--link">
+                    <a href="http://hamburger.local/category/eat-in/" class="p-top-order__card--link">
                         <div class="p-top-order__heading">
                             <h2 class="p-top-order__heading--title c-heading-fourth">
                                 Eat In

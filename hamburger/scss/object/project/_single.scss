@@ -7,12 +7,25 @@
         align-items: center;
         padding: 0 0 0 85px;
         background: url(./../images/pc/article_main_mv.png) center center no-repeat;
+        @include breakpoint(sp) {
+            height: 225px;
+            background-size: cover;
+            padding: 0 0 0 25px;
+        }
     }
     &__contents {
         font-family: $m-plus-font;
         font-weight: normal;
         color: $brown-darkest;
         padding: 60px 100px 275px;
+        @include breakpoint(sp) {
+            padding: 34px 20px 70px;
+        }
+    }
+    .wp-block-quote {
+        @include breakpoint(sp) {
+            padding: 30px 15px;
+        }
     }
     .wp-block-media-text {
         figure {
@@ -25,15 +38,31 @@
             }
         }
     }
-    .wp-block-gallery {
-        figure {
-            flex-grow: 0 !important;
-            @include breakpoint(tablet) {
-                flex-basis: 49%;
+    .wp-block-gallery.has-nested-images {
+            figure.wp-block-image {
+                flex-grow: 0;
+                @include breakpoint(tablet) {
+                    flex-basis: 49%;
+                }
+                @include breakpoint(sp) {
+                    flex-basis: 100%;
+                }
             }
+    }
+    .wp-block-code {
+        @include breakpoint(sp) {
+            margin: 30px 0;
+        }
+    }
+    .wp-block-button {
+        .wp-element-button {
             @include breakpoint(sp) {
-                flex-basis: 100%;
+                padding: 30px 0;
+                width: 100%;
             }
+        }
+        @include breakpoint(sp) {
+            width: 100%;
         }
     }
     h2 {
@@ -42,6 +71,9 @@
         font-size: 36px;
         color: $brown-darkest;
         margin: .75em 0;
+        @include breakpoint(sp) {
+            font-size: 28px;
+        }
     }
     h3 {
         font-family: $m-plus-font;
@@ -49,6 +81,9 @@
         font-size: 28px;
         color: $brown-darkest;
         margin: .83em 0;
+        @include breakpoint(sp) {
+            font-size: 24px;
+        }
     }
     h4 {
         font-family: $m-plus-font;
